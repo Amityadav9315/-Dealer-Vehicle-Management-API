@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "dealer-vehicle-api",
+		"name": "Dealer & Vehicle Management API",
+		"description": "Collection for testing Dealer and Vehicle Management APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dealers",
+			"item": [
+				{
+					"name": "Get All Dealers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/dealers",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "dealers"]
+						}
+					}
+				},
+				{
+					"name": "Get Dealer by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/dealers/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "dealers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create Dealer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Premium Auto Dealer\",\n  \"email\": \"premium@example.com\",\n  \"subscriptionType\": \"PREMIUM\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dealers",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "dealers"]
+						}
+					}
+				},
+				{
+					"name": "Update Dealer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Premium Auto Dealer\",\n  \"email\": \"premium@example.com\",\n  \"subscriptionType\": \"PREMIUM\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dealers/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "dealers", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Dealer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/dealers/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "dealers", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles"]
+						}
+					}
+				},
+				{
+					"name": "Get Vehicle by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Vehicles by Dealer ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles/dealer/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles", "dealer", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Vehicles from Premium Dealers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles/premium-dealers",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles", "premium-dealers"]
+						}
+					}
+				},
+				{
+					"name": "Create Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dealerId\": 1,\n  \"model\": \"Toyota Camry\",\n  \"price\": 25000.00,\n  \"status\": \"AVAILABLE\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles"]
+						}
+					}
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dealerId\": 1,\n  \"model\": \"Updated Toyota Camry\",\n  \"price\": 26000.00,\n  \"status\": \"SOLD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/vehicles/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "vehicles", "1"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
+
